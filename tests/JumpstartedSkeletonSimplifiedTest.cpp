@@ -15,13 +15,16 @@
 
 #include <Zemon/JumpstartedSkeletonSimplified.h>
 
+#include <spdlog/spdlog.h>
 #include <gmock/gmock.h>
 
 class JumpstartedSkeletonSimplifiedTest : public ::testing::Test
 {
     public:
         // TODO: Replace this constructor with any setup functionality you need
-        JumpstartedSkeletonSimplifiedTest() = default;
+        JumpstartedSkeletonSimplifiedTest() {
+            spdlog::set_level(spdlog::level::err);
+        }
 
         // TODO: Replace this destructor with any teardown functionality you need
         ~JumpstartedSkeletonSimplifiedTest() override = default;

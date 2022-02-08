@@ -14,11 +14,13 @@
  */
 
 #include <Zemon/JumpstartedSkeletonSimplified.h>
+#include <spdlog/spdlog.h>
 #include <iostream>
 
 // Testable logic for the executable goes here
 int run () {
     const Zemon::JumpstartedSkeletonSimplified instance;
-    std::cout << 1 << " + " << 2 << " = " << instance.add(1, 2) << std::endl;
+    const auto result = instance.add(1, 2);
+    spdlog::info("{} + {} = {}", 1, 2, result);
     return 0;
 }

@@ -17,13 +17,22 @@ target_include_directories(jumpstartedskeletonsimplified-lib PUBLIC
     "$<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}/include>"
     $<INSTALL_INTERFACE:include>
 )
+target_link_libraries(jumpstartedskeletonsimplified-lib
+    PRIVATE
+        spdlog::spdlog
+)
 
 set_target_properties(jumpstartedskeletonsimplified-lib PROPERTIES OUTPUT_NAME jumpstartedskeletonsimplified)
 install(TARGETS jumpstartedskeletonsimplified-lib EXPORT ${PROJECT_NAME}Config DESTINATION lib)
 
 add_library(jumpstartedskeletonsimplified-cli-lib STATIC JumpstartedSkeletonSimplified-cli.cpp)
 target_include_directories(jumpstartedskeletonsimplified-cli-lib INTERFACE "${CMAKE_CURRENT_LIST_DIR}")
-target_link_libraries(jumpstartedskeletonsimplified-cli-lib jumpstartedskeletonsimplified-lib)
+target_link_libraries(jumpstartedskeletonsimplified-cli-lib
+    PUBLIC
+        jumpstartedskeletonsimplified-lib
+    PRIVATE
+        spdlog::spdlog
+)
 
 add_executable(jumpstartedskeletonsimplified main.cpp)
 target_link_libraries(jumpstartedskeletonsimplified jumpstartedskeletonsimplified-cli-lib)

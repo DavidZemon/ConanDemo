@@ -44,7 +44,7 @@ function(create_test NAME LIB)
     set(XML_OUTPUT_ARG "--gtest_output=xml:${GTEST_OUTPUT_DIR}/${NAME}.xml")
 
     add_executable(${NAME} ${ARGN})
-    target_link_libraries(${NAME} ${LIB} GTest::gmock_main)
+    target_link_libraries(${NAME} ${LIB} spdlog::spdlog GTest::gmock_main)
     if (DEFINED CMAKE_CROSSCOMPILING_EMULATOR)
         add_test(NAME ${NAME}
             COMMAND ${CMAKE_CROSSCOMPILING_EMULATOR} "$<TARGET_FILE:${NAME}>" ${XML_OUTPUT_ARG})

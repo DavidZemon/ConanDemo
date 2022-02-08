@@ -25,6 +25,7 @@ endif ()
 file(RELATIVE_PATH RELATIVE_SOURCE_ROOT "${CMAKE_CURRENT_BINARY_DIR}" "${CMAKE_CURRENT_SOURCE_DIR}")
 configure_file(sonar-project.properties.in sonar-project.properties @ONLY)
 
+find_package(spdlog REQUIRED)
 find_package(Doxygen QUIET)
 
 enable_testing()

@@ -15,6 +15,9 @@
 
 #include <Zemon/JumpstartedSkeletonSimplified.h>
 
+#include <spdlog/spdlog.h>
+
 int Zemon::JumpstartedSkeletonSimplified::add(const int lhs, const int rhs) const {
+    spdlog::info("Adding {} and {}", lhs, rhs);
     return lhs + rhs;
 }

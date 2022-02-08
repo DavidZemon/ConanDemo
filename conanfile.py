@@ -32,6 +32,9 @@ class JumpstartedSkeletonSimplified(ConanFile):
         'gtest/cci.20210126',
         'doxygen/[^1.8.8]'
     )
+    requires = (
+        'spdlog/[^1.9.2]'
+    )
 
     exports = 'version.txt'
     scm = {

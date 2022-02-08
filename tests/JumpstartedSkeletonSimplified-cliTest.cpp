@@ -15,9 +15,11 @@
 
 #include "JumpstartedSkeletonSimplified-cli.h"
 
+#include <spdlog/spdlog.h>
 #include <gmock/gmock.h>
 
 // NOLINTNEXTLINE
 TEST (JumpstartedSkeletonSimplifiedCliTest, does_not_fail) {
+    spdlog::set_level(spdlog::level::err);
     ASSERT_EQ(0, run());
 }
