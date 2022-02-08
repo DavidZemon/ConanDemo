@@ -1,0 +1,7 @@
+JumpstartedSkeletonSimplified
+=============================
+
+Introduction
+------------
+
+Coming soon...
