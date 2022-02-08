@@ -52,8 +52,9 @@ class JumpstartedSkeletonSimplified(ConanFile):
         if os.path.exists(cmake_config_dir):
             shutil.rmtree(cmake_config_dir)
 
-        os.makedirs(os.path.join(f'{self.package_folder}', 'licenses'))
-        shutil.copy2('LICENSE', os.path.join(f'{self.package_folder}', 'licenses', self.name))
+        os.makedirs(os.path.join(f'{self.package_folder}', 'licenses'), exist_ok=True)
+        shutil.copy2(os.path.join(self.source_folder, 'LICENSE'),
+                     os.path.join(f'{self.package_folder}', 'licenses', self.name))
 
     def package_info(self):
         self.cpp_info.set_property('cmake_file_name', 'JumpstartedSkeletonSimplified')
