@@ -13,7 +13,7 @@ cmake_minimum_required(VERSION 3.9)
 
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_BINARY_DIR}")
 file(STRINGS "version.txt" VERSION)
-project(JumpstartedSkeletonSimplified VERSION ${VERSION})
+project(ConanDemo VERSION ${VERSION})
 
 # Configure SonarQube properties file
 if (DEFINED ENV{CI_GTEST_OUTPUT_DIR})
@@ -65,7 +65,7 @@ install(DIRECTORY "include/"
     COMPONENT dev)
 install(EXPORT ${PROJECT_NAME}Config
     DESTINATION lib/cmake/${PROJECT_NAME}
-    NAMESPACE JumpstartedSkeletonSimplified::
+    NAMESPACE ConanDemo::
     COMPONENT dev)
 
 if (TARGET Doxygen::doxygen)
@@ -74,4 +74,4 @@ if (TARGET Doxygen::doxygen)
     doxygen_add_docs(docs "README.md" "src" "include")
 endif ()
 
-include(JumpstartedSkeletonSimplifiedCPack.cmake)
+include(ConanDemoCPack.cmake)

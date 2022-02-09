@@ -12,28 +12,28 @@
 cmake_minimum_required(VERSION 3.9)
 
 
-add_library(jumpstartedskeletonsimplified-lib JumpstartedSkeletonSimplified.cpp)
-target_include_directories(jumpstartedskeletonsimplified-lib PUBLIC
+add_library(conandemo-lib ConanDemo.cpp)
+target_include_directories(conandemo-lib PUBLIC
     "$<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}/include>"
     $<INSTALL_INTERFACE:include>
 )
-target_link_libraries(jumpstartedskeletonsimplified-lib
+target_link_libraries(conandemo-lib
     PRIVATE
         spdlog::spdlog
 )
 
-set_target_properties(jumpstartedskeletonsimplified-lib PROPERTIES OUTPUT_NAME jumpstartedskeletonsimplified)
-install(TARGETS jumpstartedskeletonsimplified-lib EXPORT ${PROJECT_NAME}Config DESTINATION lib)
+set_target_properties(conandemo-lib PROPERTIES OUTPUT_NAME conandemo)
+install(TARGETS conandemo-lib EXPORT ${PROJECT_NAME}Config DESTINATION lib)
 
-add_library(jumpstartedskeletonsimplified-cli-lib STATIC JumpstartedSkeletonSimplified-cli.cpp)
-target_include_directories(jumpstartedskeletonsimplified-cli-lib INTERFACE "${CMAKE_CURRENT_LIST_DIR}")
-target_link_libraries(jumpstartedskeletonsimplified-cli-lib
+add_library(conandemo-cli-lib STATIC ConanDemo-cli.cpp)
+target_include_directories(conandemo-cli-lib INTERFACE "${CMAKE_CURRENT_LIST_DIR}")
+target_link_libraries(conandemo-cli-lib
     PUBLIC
-        jumpstartedskeletonsimplified-lib
+        conandemo-lib
     PRIVATE
         spdlog::spdlog
 )
 
-add_executable(jumpstartedskeletonsimplified main.cpp)
-target_link_libraries(jumpstartedskeletonsimplified jumpstartedskeletonsimplified-cli-lib)
-install(TARGETS jumpstartedskeletonsimplified DESTINATION bin)
+add_executable(conandemo main.cpp)
+target_link_libraries(conandemo conandemo-cli-lib)
+install(TARGETS conandemo DESTINATION bin)

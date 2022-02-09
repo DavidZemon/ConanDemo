@@ -12,7 +12,7 @@
 from conans import ConanFile, CMake
 
 
-class JumpstartedSkeletonSimplifiedTest(ConanFile):
+class ConanDemoTest(ConanFile):
     settings = 'os', 'compiler', 'build_type', 'arch'
     generators = 'cmake_find_package'
 

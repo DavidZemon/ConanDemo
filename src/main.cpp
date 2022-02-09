@@ -13,7 +13,7 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 
-#include "JumpstartedSkeletonSimplified-cli.h"
+#include "ConanDemo-cli.h"
 
 // The bare minimum of logic goes here. Because this file has a main function, it can not be linked into any unit test
 // and therefore no logic in this file can be unit tested.

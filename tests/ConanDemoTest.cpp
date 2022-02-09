@@ -1,5 +1,5 @@
 /**
- * @file JumpstartedSkeletonSimplifiedTest.cpp
+ * @file ConanDemoTest.cpp
  *
  * Zero-Clause BSD
  *
@@ -13,27 +13,27 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 
-#include <Zemon/JumpstartedSkeletonSimplified.h>
+#include <Zemon/ConanDemo.h>
 
 #include <spdlog/spdlog.h>
 #include <gmock/gmock.h>
 
-class JumpstartedSkeletonSimplifiedTest : public ::testing::Test
+class ConanDemoTest : public ::testing::Test
 {
     public:
         // TODO: Replace this constructor with any setup functionality you need
-        JumpstartedSkeletonSimplifiedTest() {
+        ConanDemoTest() {
             spdlog::set_level(spdlog::level::err);
         }
 
         // TODO: Replace this destructor with any teardown functionality you need
-        ~JumpstartedSkeletonSimplifiedTest() override = default;
+        ~ConanDemoTest() override = default;
 
     protected:
-        Zemon::JumpstartedSkeletonSimplified testable;
+        Zemon::ConanDemo testable;
 };
 
 // NOLINTNEXTLINE
-TEST_F (JumpstartedSkeletonSimplifiedTest, can_add) {
+TEST_F (ConanDemoTest, can_add) {
     ASSERT_EQ(3, testable.add(1, 2));
 }

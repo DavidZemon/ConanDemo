@@ -1,5 +1,5 @@
 /**
- * @file JumpstartedSkeletonSimplified.cpp
+ * @file ConanDemoTestConan.cpp
  *
  * Zero-Clause BSD
  *
@@ -13,11 +13,9 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 
-#include <Zemon/JumpstartedSkeletonSimplified.h>
+#include <Zemon/ConanDemo.h>
 
-#include <spdlog/spdlog.h>
-
-int Zemon::JumpstartedSkeletonSimplified::add(const int lhs, const int rhs) const {
-    spdlog::info("Adding {} and {}", lhs, rhs);
-    return lhs + rhs;
+int main () {
+    const Zemon::ConanDemo instance;
+    return 3 != instance.add(1, 2);
 }

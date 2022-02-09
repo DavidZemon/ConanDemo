@@ -65,5 +65,5 @@ function(create_test NAME LIB)
     add_dependencies(test-all ${NAME})
 endfunction()
 
-create_test(JumpstartedSkeletonSimplifiedTest jumpstartedskeletonsimplified-lib JumpstartedSkeletonSimplifiedTest.cpp)
-create_test(JumpstartedSkeletonSimplified-cliTest jumpstartedskeletonsimplified-cli-lib JumpstartedSkeletonSimplified-cliTest.cpp)
+create_test(ConanDemoTest conandemo-lib ConanDemoTest.cpp)
+create_test(ConanDemo-cliTest conandemo-cli-lib ConanDemo-cliTest.cpp)

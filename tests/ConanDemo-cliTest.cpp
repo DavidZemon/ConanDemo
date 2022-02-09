@@ -1,5 +1,5 @@
 /**
- * @file JumpstartedSkeletonSimplified-cli.cpp
+ * @file ConanDemo-cliTest.cpp
  *
  * Zero-Clause BSD
  *
@@ -13,14 +13,13 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 
-#include <Zemon/JumpstartedSkeletonSimplified.h>
-#include <spdlog/spdlog.h>
-#include <iostream>
+#include "ConanDemo-cli.h"
 
-// Testable logic for the executable goes here
-int run () {
-    const Zemon::JumpstartedSkeletonSimplified instance;
-    const auto result = instance.add(1, 2);
-    spdlog::info("{} + {} = {}", 1, 2, result);
-    return 0;
+#include <spdlog/spdlog.h>
+#include <gmock/gmock.h>
+
+// NOLINTNEXTLINE
+TEST (ConanDemoCliTest, does_not_fail) {
+    spdlog::set_level(spdlog::level::err);
+    ASSERT_EQ(0, run());
 }

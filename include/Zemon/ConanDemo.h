@@ -1,5 +1,5 @@
 /**
- * @file Zemon/JumpstartedSkeletonSimplified.h
+ * @file Zemon/ConanDemo.h
  *
  * Zero-Clause BSD
  *
@@ -22,7 +22,7 @@ namespace Zemon {
  *
  * This is a longer description of a very useless class.
  */
-class JumpstartedSkeletonSimplified {
+class ConanDemo {
     public:
         /**
          * Add two numbers.

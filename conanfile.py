@@ -15,13 +15,13 @@ import shutil
 from conans import ConanFile, CMake, tools
 
 
-class JumpstartedSkeletonSimplified(ConanFile):
-    name = 'jumpstartedskeletonsimplified'
+class ConanDemo(ConanFile):
+    name = 'conandemo'
     version = tools.load("version.txt").strip() + '-1'
     license = 'Proprietary'
     description = 'A simplified version of JumpstartedSkeleton with options chosen based on Conan demo-ability.'
-    homepage = 'https://github.com/DavidZemon/JumpstartedSkeletonSimplified'
-    url = 'https://github.com/DavidZemon/JumpstartedSkeletonSimplified'
+    homepage = 'https://github.com/DavidZemon/ConanDemo'
+    url = 'https://github.com/DavidZemon/ConanDemo'
     topics = 'tag1', 'tag2'
     settings = 'os', 'compiler', 'build_type', 'arch'
     options = {'shared': [True, False], 'fPIC': [True, False]}
@@ -60,9 +60,14 @@ class JumpstartedSkeletonSimplified(ConanFile):
                      os.path.join(f'{self.package_folder}', 'licenses', self.name))
 
     def package_info(self):
-        self.cpp_info.set_property('cmake_file_name', 'JumpstartedSkeletonSimplified')
-        self.cpp_info.set_property('cmake_target_name', 'JumpstartedSkeletonSimplified')
-        self.cpp_info.components['jumpstartedskeletonsimplified-lib'].libs = ['jumpstartedskeletonsimplified']
+        self.cpp_info.set_property('cmake_file_name', 'ConanDemo')
+        self.cpp_info.set_property('cmake_target_name', 'ConanDemo')
+
+        # TODO: to remove in conan v2 once cmake_find_package_* generators removed
+        self.cpp_info.names["cmake_find_package"] = "ConanDemo"
+
+        self.cpp_info.components['conandemo-lib'].libs = ['conandemo']
+        self.cpp_info.components['conandemo-lib'].requires = ['spdlog::spdlog']
 
     @property
     def cmake(self):

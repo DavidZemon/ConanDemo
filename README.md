@@ -1,5 +1,5 @@
-JumpstartedSkeletonSimplified
-=============================
+ConanDemo
+=========
 
 Introduction
 ------------

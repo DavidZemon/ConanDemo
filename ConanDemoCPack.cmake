@@ -24,7 +24,7 @@ if (DEBUILD)
     list(APPEND CPACK_GENERATOR DEB)
 endif ()
 
-set(CPACK_PROJECT_URL "https://github.com/DavidZemon/JumpstartedSkeletonSimplified")
+set(CPACK_PROJECT_URL "https://github.com/DavidZemon/ConanDemo")
 set(CPACK_PACKAGE_VENDOR "Your Company, Inc.")
 set(CPACK_PACKAGE_CONTACT "David Zemon <david@zemon.name>")
 set(CPACK_PACKAGE_VERSION_MAJOR ${PROJECT_VERSION_MAJOR})
@@ -60,9 +60,9 @@ set(CPACK_DEB_COMPONENT_INSTALL     ON)
 set(CPACK_RPM_COMPONENT_INSTALL     ON)
 
 set(CPACK_COMPONENT_dev_NAME        "Development headers/libraries")
-set(CPACK_COMPONENT_dev_DESCRIPTION "Headers, static libraries, build system files for JumpstartedSkeletonSimplified")
+set(CPACK_COMPONENT_dev_DESCRIPTION "Headers, static libraries, build system files for ConanDemo")
 
-set(CPACK_PROJECT_CONFIG_FILE "${PROJECT_SOURCE_DIR}/JumpstartedSkeletonSimplifiedCPackOptions.cmake")
+set(CPACK_PROJECT_CONFIG_FILE "${PROJECT_SOURCE_DIR}/ConanDemoCPackOptions.cmake")
 include(CPack)
 
 # Bundle the system and "Unspecified" components together for the sake of the DEB and RPM packages
