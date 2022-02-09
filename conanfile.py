@@ -33,7 +33,7 @@ class ConanDemo(ConanFile):
         'doxygen/[^1.8.8]'
     )
     requires = (
-        'spdlog/[^1.9.2]'
+        'spdlog/[~1.9.2]'
     )
 
     exports = 'version.txt'
